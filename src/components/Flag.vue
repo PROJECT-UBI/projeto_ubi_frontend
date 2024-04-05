@@ -12,9 +12,9 @@ export default {
     isSelected: {
       type: Boolean,
       default: false,
-    }
+    },
   },
-}  
+};
 </script>
 
 <style>

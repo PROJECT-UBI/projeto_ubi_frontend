@@ -18,6 +18,7 @@
 </template>
 <script>
 export default {
+  name: 'IconEmail',
   props: {
     size: { type: [String, Number], default: 19 },
     color: { type: String },

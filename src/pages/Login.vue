@@ -4,24 +4,34 @@
       <div class="ubi-title">{{ $t('login.UBI') }}</div>
       <div class="ubi-inputs">
 
-        <Input :label="$t('login.label_email')" :placeholder="$t('login.placeholder_email')" type="email"
-          v-model="email" @input="getEmail">
-        <template #icon>
-          <Email />
-        </template>
-        </Input>
-        <Input :label="$t('login.label_password')" :placeholder="$t('login.placeholder_password')" type="password"
-          v-model="password" @input="getPassword">
-        <template #icon>
-          <Locker />
-        </template>
-        </Input>
+        <UbiInput
+          :label="$t('login.label_email')"
+          :placeholder="$t('login.placeholder_email')"
+          type="email"
+          v-model="email"
+          @input="getEmail"
+        >
+          <template #icon>
+            <Email />
+          </template>
+        </UbiInput>
+        <UbiInput
+          :label="$t('login.label_password')"
+          :placeholder="$t('login.placeholder_password')"
+          type="password"
+          v-model="password"
+          @input="getPassword"
+        >
+          <template #icon>
+            <Locker />
+          </template>
+        </UbiInput>
         <div class="forgot-password" @click="goToForgotPassword">
           <span class="forgot" @click="goToForgotPassword">{{ $t('login.forgot') }}</span>
         </div>
       </div>
 
-      <Button :label="$t('login.login')" :handleClick="login"></Button>
+      <UbiButton :label="$t('login.login')" :handleClick="login"></UbiButton>
       <div class="no-account" @click="goToRegister">
         <span>{{ $t('login.no_account') }}</span>
         <span class="register" @click="goToRegister">{{ $t('login.register') }}</span>
@@ -47,16 +57,17 @@
 </template>
 
 <script>
-import Input from "../components/Input.vue";
-import Button from "../components/Button.vue";
-import ChooseLanguage from "../components/ChooseLanguage.vue";
-import Email from "@/components/Icons/Email.vue";
-import Locker from "@/components/Icons/Locker.vue";
+import UbiInput from '../components/Input.vue';
+import UbiButton from '../components/Button.vue';
+import ChooseLanguage from '../components/ChooseLanguage.vue';
+import Email from '../components/Icons/Email.vue';
+import Locker from '../components/Icons/Locker.vue';
 
 export default {
+  name: 'LoginPage',
   components: {
-    Input,
-    Button,
+    UbiInput,
+    UbiButton,
     ChooseLanguage,
     Email,
     Locker,
@@ -65,7 +76,7 @@ export default {
     return {
       email: '',
       password: '',
-    }
+    };
   },
   methods: {
     goTo() {
@@ -82,9 +93,9 @@ export default {
     },
     goToForgotPassword() {
       this.$router.push('/forgotpassword');
-    }
+    },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -164,7 +175,7 @@ export default {
   font-family: 'Archivo Black', sans-serif;
   margin-top: 17px;
 }
-.register { 
+.register {
   color: #780000;
 }
 </style>
