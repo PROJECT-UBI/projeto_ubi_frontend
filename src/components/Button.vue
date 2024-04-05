@@ -6,26 +6,27 @@
 
 <script>
 export default {
+  name: 'UbiButton',
   props: {
     label: {
       type: String,
       default: '',
     },
-    color:{
+    color: {
       type: String,
-      default: '#780000'
+      default: '#780000',
     },
     handleClick: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
   },
   computed: {
     getBackground() {
-      return `background-color: ${this.color}`
-    }
+      return `background-color: ${this.color}`;
+    },
   },
-}  
+};
 </script>
 
 <style>

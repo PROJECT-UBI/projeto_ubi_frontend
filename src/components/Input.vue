@@ -7,10 +7,10 @@
       <div class="input-icon">
         <slot name="icon"></slot>
       </div>
-      <input 
-        class="ubi-input-put" 
+      <input
+        class="ubi-input-put"
         :class="{'error': error}"
-        :type="type" 
+        :type="type"
         :placeholder="placeholder"
         :value="modelValue"
         :disabled="disabled"
@@ -24,7 +24,7 @@
 <script>
 
 export default {
-  name: 'Input',
+  name: 'UbiInput',
   props: {
     label: {
       type: String,
@@ -50,17 +50,17 @@ export default {
       type: String,
       default: '',
     },
-    modelValue: [String, Number]
+    modelValue: [String, Number],
   },
   methods: {
     updateValue(event) {
-      this.$emit("update:modelValue", event.target.value);
-    }
-  }
-}
+      this.$emit('update:modelValue', event.target.value);
+    },
+  },
+};
 </script>
 
-<style scoped> 
+<style scoped>
 .ubi-Input {
   display: flex;
   flex-direction: column;
