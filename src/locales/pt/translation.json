@@ -25,6 +25,8 @@
     "login": " Entrar",
     "no_account": "Não tem uma conta?",
     "register": " Registre-se",
-    "forgot": "Esqueci minha senha"
+    "forgot": "Esqueci minha senha",
+    "welcome-back": "Que bom te ver novamente",
+    "welcome": "Seja bem-vindo!"
   }
 }

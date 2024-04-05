@@ -29,13 +29,20 @@
       <ChooseLanguage />
     </div>
 
-    
-    <div class="ubi-banner">
-      <div class="img">
-        <img src="../assets/banner-login.png">
+    <div class="welcome-messages">
+      <div class="welcome-back">
+        {{ $t('login.welcome-back') }}
+      </div>
+      <div class="welcome">
+        {{ $t('login.welcome') }}
+      </div>
+
+      <div class="ubi-banner">
+        <div class="img">
+          <img src="../assets/banner-login.png">
+        </div>
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -138,5 +145,25 @@ export default {
   display: flex;
   align-items: end;
   justify-content: right;
+}
+
+.welcome-messages{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-back{
+  color: #9D9999;
+  font-size: 20px;
+  font-family: 'Abel', sans-serif;
+}
+
+.welcome{
+  color: #780000;
+  font-size: 35px;
+  font-family: 'Archivo Black', sans-serif;
+  margin-top: 17px;
 }
 </style>

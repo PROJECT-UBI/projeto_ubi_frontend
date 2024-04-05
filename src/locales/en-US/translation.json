@@ -25,6 +25,8 @@
     "login": " Log in",
     "no_account": "Don't have an account?",
     "register": " Sign-up",
-    "forgot": "Forgot my password"
+    "forgot": "Forgot my password",
+    "welcome-back": "Great to see you again",
+    "welcome": "Welcome back!"
   }
 }
