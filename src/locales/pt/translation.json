@@ -15,7 +15,6 @@
     "have_account": "Já tem uma conta?",
     "login": " Entre"
   },
-
   "login": {
     "UBI": "Projeto UBI",
     "label_email": "Insira seu email",
@@ -28,5 +27,12 @@
     "forgot": "Esqueci minha senha",
     "welcome-back": "Que bom te ver novamente",
     "welcome": "Seja bem-vindo!"
+  },
+  "forgot_password": {
+    "UBI": "Projeto UBI",
+    "description": "Insira o endereço de e-mail associado a conta que você deseja recuperar a senha e iremos enviar um link de recuperação",
+    "placeholder_email": "name@example.com",
+    "button": "Enviar",
+    "back_login": "Volte ao login"
   }
 }

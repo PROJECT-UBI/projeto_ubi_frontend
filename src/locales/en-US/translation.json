@@ -15,7 +15,6 @@
     "have_account": "Already have an account?",
     "login": " Log in"
   },
-
   "login": {
     "UBI": "Projeto UBI",
     "label_email": "Enter your email",
@@ -28,5 +27,12 @@
     "forgot": "Forgot my password",
     "welcome-back": "Great to see you again",
     "welcome": "Welcome back!"
+  },
+  "forgot_password": {
+    "UBI": "Projeto UBI",
+    "description": "Please enter the email address associated with the account you wish to recover the password for, and we will send a recovery link",
+    "placeholder_email": "name@example.com",
+    "button": "Send",
+    "back_login": "Back to login"
   }
 }
