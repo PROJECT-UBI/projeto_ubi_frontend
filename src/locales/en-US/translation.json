@@ -11,8 +11,20 @@
     "placeholder_email": "name@example.com",
     "placeholder_password": "password",
     "placeholder_confirm_password": "password",
-    "register": "Register",
+    "register": "Sign-up",
     "have_account": "Already have an account?",
     "login": " Log in"
+  },
+
+  "login": {
+    "UBI": "Projeto UBI",
+    "label_email": "Enter your email",
+    "label_password": "Enter your password",
+    "placeholder_email": "name@example.com",
+    "placeholder_password": "password",
+    "login": " Log in",
+    "no_account": "Don't have an account?",
+    "register": " Sign-up",
+    "forgot": "Forgot my password"
   }
 }

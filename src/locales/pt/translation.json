@@ -14,5 +14,17 @@
     "register": "Cadastrar",
     "have_account": "Já tem uma conta?",
     "login": " Entre"
+  },
+
+  "login": {
+    "UBI": "Projeto UBI",
+    "label_email": "Insira seu email",
+    "label_password": "Insira sua senha",
+    "placeholder_email": "name@example.com",
+    "placeholder_password": "password",
+    "login": " Entrar",
+    "no_account": "Não tem uma conta?",
+    "register": " Registre-se",
+    "forgot": "Esqueci minha senha"
   }
 }
