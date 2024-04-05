@@ -9,4 +9,11 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "./src/stylesheets/style.scss";', // Se você tem um arquivo com variáveis SCSS, você pode importá-lo aqui
+      },
+    },
+  },
 });
