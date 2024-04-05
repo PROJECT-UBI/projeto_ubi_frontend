@@ -3,53 +3,53 @@
     <div class="ubi-form">
       <div class="ubi-title">{{ $t('register.UBI') }}</div>
       <div class="ubi-inputs">
-        <Input 
+        <Input
           :label="$t('register.label_name')"
-          :placeholder="$t('register.placeholder_name')"   
-          v-model="name" 
+          :placeholder="$t('register.placeholder_name')"
+          v-model="name"
           @input="getName"
         >
           <template #icon>
             <User/>
           </template>
         </Input>
-        <Input 
+        <Input
           :label="$t('register.label_surname')"
-          :placeholder="$t('register.placeholder_surname')"    
-          v-model="surname" 
+          :placeholder="$t('register.placeholder_surname')"
+          v-model="surname"
           @input="getSurname"
         >
           <template #icon>
             <User/>
           </template>
         </Input>
-        <Input 
+        <Input
           :label="$t('register.label_email')"
-          :placeholder="$t('register.placeholder_email')"     
+          :placeholder="$t('register.placeholder_email')"
           type="email"
-          v-model="email" 
+          v-model="email"
           @input="getEmail"
         >
           <template #icon>
             <Email/>
           </template>
         </Input>
-        <Input 
+        <Input
           :label="$t('register.label_password')"
-          :placeholder="$t('register.placeholder_password')"     
+          :placeholder="$t('register.placeholder_password')"
           type="password"
-          v-model="password" 
+          v-model="password"
           @input="getPassword"
         >
           <template #icon>
             <Locker/>
           </template>
         </Input>
-        <Input 
+        <Input
           :label="$t('register.label_confirm_password')"
-          :placeholder="$t('register.placeholder_confirm_password')" 
+          :placeholder="$t('register.placeholder_confirm_password')"
           type="password"
-          v-model="password_confirm" 
+          v-model="password_confirm"
           @input="confirmPassword"
         >
           <template #icon>
@@ -73,12 +73,12 @@
 </template>
 
 <script>
-import Input from "../components/Input.vue";
-import Button from "../components/Button.vue";
-import ChooseLanguage from "../components/ChooseLanguage.vue";
-import User from "@/components/Icons/User.vue";
-import Email from "@/components/Icons/Email.vue";
-import Locker from "@/components/Icons/Locker.vue";
+import Input from '../components/Input.vue';
+import Button from '../components/Button.vue';
+import ChooseLanguage from '../components/ChooseLanguage.vue';
+import User from '@/components/Icons/User.vue';
+import Email from '@/components/Icons/Email.vue';
+import Locker from '@/components/Icons/Locker.vue';
 
 export default {
   components: {
@@ -96,7 +96,7 @@ export default {
       email: '',
       password: '',
       password_confirm: '',
-    }
+    };
   },
   methods: {
     goTo() {
@@ -116,9 +116,9 @@ export default {
     },
     confirmPassword(password) {
       this.password_confirm = password;
-    }
+    },
   },
-}
+};
 </script>
 
 <style scoped>

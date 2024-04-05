@@ -50,7 +50,6 @@
 import Input from "../components/Input.vue";
 import Button from "../components/Button.vue";
 import ChooseLanguage from "../components/ChooseLanguage.vue";
-import User from "@/components/Icons/User.vue";
 import Email from "@/components/Icons/Email.vue";
 import Locker from "@/components/Icons/Locker.vue";
 
@@ -134,7 +133,6 @@ export default {
 }
 
 .no-account {
-  color: #780000;
   cursor: pointer;
   margin: 32px 0;
 }
@@ -165,5 +163,8 @@ export default {
   font-size: 35px;
   font-family: 'Archivo Black', sans-serif;
   margin-top: 17px;
+}
+.register { 
+  color: #780000;
 }
 </style>
