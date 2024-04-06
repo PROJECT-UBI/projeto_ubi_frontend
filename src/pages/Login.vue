@@ -98,15 +98,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .ubi-login {
   display: grid;
   grid-template-columns: 30% 70%;
   height: 100vh;
   width: 100vw;
-  font-family: "Abel", sans-serif;
 }
-
 .ubi-form {
   padding-left: 30%;
   display: flex;
@@ -115,26 +113,20 @@ export default {
   text-align: center;
   box-sizing: border-box;
 }
-
 .ubi-title {
-  font-family: "Archivo Black", sans-serif;
-  font-size: 32px;
   margin-bottom: 32px;
 }
-
 .ubi-inputs {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-bottom: 48px;
 }
-
 .ubi-banner {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .img {
   height: 100%;
   width: 100%;
@@ -142,12 +134,10 @@ export default {
   align-items: center;
   justify-content: center;
 }
-
 .no-account {
   cursor: pointer;
   margin: 32px 0;
 }
-
 .forgot-password {
   color: #780000;
   cursor: pointer;
@@ -155,24 +145,19 @@ export default {
   align-items: end;
   justify-content: right;
 }
-
 .welcome-messages{
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
 .welcome-back{
   color: #9D9999;
   font-size: 20px;
-  font-family: 'Abel', sans-serif;
 }
-
 .welcome{
   color: #780000;
   font-size: 35px;
-  font-family: 'Archivo Black', sans-serif;
   margin-top: 17px;
 }
 .register {

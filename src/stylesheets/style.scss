@@ -1,0 +1,18 @@
+// VARIÁVEIS CSS
+$primary-font: "Abel", sans-serif;
+$secondary-font: "Archivo Black", sans-serif;
+$primary-color: '#780000';
+
+span {
+  font-family: $primary-font;
+  font-size: 16px;
+}
+
+div {
+  font-family: $primary-font;
+}
+
+.ubi-title {
+  font-family: $secondary-font;
+  font-size: 32px;
+}
