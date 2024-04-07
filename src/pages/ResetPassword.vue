@@ -1,5 +1,12 @@
 <template>
   <div class="ubi-reset">
+
+    <div class="ubi-banner">
+      <div class="resetpassword-img">
+        <img src="../assets/reset-banner.svg">
+      </div>
+    </div>
+
     <div class="ubi-form">
       <div class="ubi-title">{{ $t('reset.UBI') }}</div>
       <div class="ubi-input">
@@ -18,13 +25,8 @@
           </template>
         </UbiInput>
       </div>
-      <UbiButton :label="$t('reset.reset')" :handleClick="goTo"></UbiButton>
+      <UbiButton :label="$t('reset.reset')" :handleClick="goTo" class="button-reset"></UbiButton>
       <ChooseLanguage />
-    </div>
-    <div class="ubi-banner">
-      <div class="resetpassword-img">
-        <img src="../assets/reset-banner.svg">
-      </div>
     </div>
   </div>
 </template>
@@ -73,30 +75,42 @@ export default {
   width: 100vw;
   font-family: "Abel", sans-serif;
 }
+
 .ubi-form {
-  padding-left: 30%;
+  padding-left: 35%;
+  padding-right: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   box-sizing: border-box;
 }
+
 .ubi-title {
-  font-family:  "Archivo Black", sans-serif;
+  font-family: "Archivo Black", sans-serif;
   font-size: 32px;
   margin-bottom: 32px;
 }
+
 .ubi-input {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-bottom: 30px;
+  color: #373737;
 }
+
 .ubi-banner {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 70%;
 }
+
+.button-reset {
+  margin-bottom: 20px;
+}
+
 .resetpassword-img {
   height: 100%;
   width: 100%;
@@ -104,6 +118,4 @@ export default {
   align-items: center;
   justify-content: center;
 }
-
-
 </style>

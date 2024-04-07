@@ -55,6 +55,10 @@
     </div>
   </div>
 
+  <router-link to="/resetpassword">RESET PASSWORD</router-link>
+  <br>
+  <router-link to="/checkpage">CHECK PAGE</router-link>
+
 </template>
 
 <script>

@@ -42,5 +42,9 @@
   "reset": "Redefinir Senha",
   "placeholder_password":"Senha",
   "placeholder_confirm_password":"Confirme sua senha"
+ },
+ "checkpage":{
+  "email-sent":"O e-mail de redefinição de senha foi enviado!",
+  "check-email":"Cheque sua caixa de entrada"
  }
 }

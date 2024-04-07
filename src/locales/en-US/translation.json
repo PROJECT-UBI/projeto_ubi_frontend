@@ -42,5 +42,9 @@
     "reset": "Reset password",
     "placeholder_password":"Password",
     "placeholder_confirm_password":"Confirm your Password"
-   }
+   },
+"checkpage":{
+  "email-sent":"The password reset email has been sent!",
+  "check-email":"Please check your inbox"
+}
 }
