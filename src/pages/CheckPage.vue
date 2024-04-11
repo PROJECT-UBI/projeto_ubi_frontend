@@ -13,7 +13,7 @@
                 {{ $t('checkpage.check-email') }}
             </div>
         </div>
-    <ChooseLanguage />
+        <ChooseLanguage />
     </div>
 </template>
 
@@ -28,21 +28,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .ubi-banner {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4%;
+    box-sizing: border-box;
 }
 
-.checkpage-img img{
+.checkpage-img img {
     height: 112%;
     width: 112%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .checkpage-message {
@@ -57,7 +57,7 @@ export default {
     color: #000000;
     font-family: "Archivo Black", sans-serif;
     font-size: 25px;
-    }
+}
 
 .check-email {
     color: #000000;

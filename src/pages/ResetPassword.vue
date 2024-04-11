@@ -1,31 +1,42 @@
 <template>
   <div class="ubi-reset">
-
     <div class="ubi-banner">
       <div class="resetpassword-img">
         <img src="../assets/reset-banner.svg">
       </div>
     </div>
-
     <div class="ubi-form">
       <div class="ubi-title">{{ $t('reset.UBI') }}</div>
       <div class="ubi-input">
-
-        <UbiInput :label="$t('reset.label_password')" :placeholder="$t('reset.placeholder_password')" type="password"
-          v-model="password" @input="getPassword">
-          <template #icon>
-            <Locker />
-          </template>
-
-        </UbiInput>
-        <UbiInput :label="$t('reset.label_confirm_password')" :placeholder="$t('reset.placeholder_confirm_password')"
-          type="password" v-model="password_confirm" @input="confirmPassword">
+        <UbiInput 
+          :label="$t('reset.label_password')" 
+          :placeholder="$t('reset.placeholder_password')" 
+          type="password"
+          v-model="password" 
+          @input="getPassword"
+        >
           <template #icon>
             <Locker />
           </template>
         </UbiInput>
+        <UbiInput 
+          :label="$t('reset.label_confirm_password')" 
+          :placeholder="$t('reset.placeholder_confirm_password')"
+          type="password" 
+          v-model="password_confirm" 
+          @input="confirmPassword"
+        >
+          <template #icon>
+            <Locker />
+          </template>
+      </UbiInput>
       </div>
-      <UbiButton :label="$t('reset.reset')" :handleClick="goTo" class="button-reset"></UbiButton>
+      <UbiButton 
+        :label="$t('reset.reset')" 
+        :handleClick="goTo" 
+        class="button-reset"
+      >
+      </UbiButton>
       <ChooseLanguage />
     </div>
   </div>
@@ -67,13 +78,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .ubi-reset {
   display: grid;
   grid-template-columns: 30% 70%;
   height: 100vh;
   width: 100vw;
-  font-family: "Abel", sans-serif;
 }
 
 .ubi-form {
@@ -87,7 +97,6 @@ export default {
 }
 
 .ubi-title {
-  font-family: "Archivo Black", sans-serif;
   font-size: 32px;
   margin-bottom: 32px;
 }

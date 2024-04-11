@@ -35,16 +35,16 @@
     "button": "Send",
     "back_login": "Back to login"
   },
-  "reset":{
+  "reset": {
     "UBI": "Reset Password",
-    "label_password":"Enter your password",
-    "label_confirm_password":"Confirme your password",
+    "label_password": "Enter your password",
+    "label_confirm_password": "Confirme your password",
     "reset": "Reset password",
-    "placeholder_password":"Password",
-    "placeholder_confirm_password":"Confirm your Password"
-   },
-"checkpage":{
-  "email-sent":"The password reset email has been sent!",
-  "check-email":"Please check your inbox"
-}
+    "placeholder_password": "Password",
+    "placeholder_confirm_password": "Confirm your Password"
+  },
+  "checkpage": {
+    "email-sent": "The password reset email has been sent!",
+    "check-email": "Please check your inbox"
+  }
 }

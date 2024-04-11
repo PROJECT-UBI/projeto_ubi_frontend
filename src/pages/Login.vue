@@ -3,7 +3,6 @@
     <div class="ubi-form">
       <div class="ubi-title">{{ $t('login.UBI') }}</div>
       <div class="ubi-inputs">
-
         <UbiInput
           :label="$t('login.label_email')"
           :placeholder="$t('login.placeholder_email')"
@@ -30,8 +29,10 @@
           <span class="forgot" @click="goToForgotPassword">{{ $t('login.forgot') }}</span>
         </div>
       </div>
-
-      <UbiButton :label="$t('login.login')" :handleClick="login"></UbiButton>
+      <UbiButton 
+        :label="$t('login.login')" 
+        :handleClick="login">
+      </UbiButton>
       <div class="no-account" @click="goToRegister">
         <span>{{ $t('login.no_account') }}</span>
         <span class="register" @click="goToRegister">{{ $t('login.register') }}</span>
@@ -54,10 +55,6 @@
       </div>
     </div>
   </div>
-
-  <router-link to="/resetpassword">RESET PASSWORD</router-link>
-  <br>
-  <router-link to="/checkpage">CHECK PAGE</router-link>
 
 </template>
 
