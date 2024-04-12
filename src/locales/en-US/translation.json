@@ -1,6 +1,6 @@
 {
   "register": {
-    "UBI": "Projeto UBI",
+    "UBI": "Project UBI",
     "label_name": "Enter your name",
     "label_surname": "Enter your surname",
     "label_email": "Enter your email",
@@ -16,7 +16,7 @@
     "login": " Log in"
   },
   "login": {
-    "UBI": "Projeto UBI",
+    "UBI": "Project UBI",
     "label_email": "Enter your email",
     "label_password": "Enter your password",
     "placeholder_email": "name@example.com",
@@ -34,5 +34,17 @@
     "placeholder_email": "name@example.com",
     "button": "Send",
     "back_login": "Back to login"
+  },
+  "reset": {
+    "UBI": "Reset Password",
+    "label_password": "Enter your password",
+    "label_confirm_password": "Confirme your password",
+    "reset": "Reset password",
+    "placeholder_password": "Password",
+    "placeholder_confirm_password": "Confirm your Password"
+  },
+  "checkpage": {
+    "email-sent": "The password reset email has been sent!",
+    "check-email": "Please check your inbox"
   }
 }

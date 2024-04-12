@@ -62,7 +62,6 @@
         <span>{{ $t('register.have_account') }}</span>
         <span class="login" @click="goTo">{{ $t('register.login') }}</span>
       </div>
-      <ChooseLanguage/>
     </div>
     <div class="ubi-banner">
       <div class="img">
@@ -75,7 +74,6 @@
 <script>
 import UbiInput from '../components/Input.vue';
 import UbiButton from '../components/Button.vue';
-import ChooseLanguage from '../components/ChooseLanguage.vue';
 import User from '../components/Icons/User.vue';
 import Email from '../components/Icons/Email.vue';
 import Locker from '../components/Icons/Locker.vue';
@@ -85,7 +83,6 @@ export default {
   components: {
     UbiInput,
     UbiButton,
-    ChooseLanguage,
     User,
     Email,
     Locker,
@@ -122,7 +119,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .ubi-register {
   display: grid;
   grid-template-columns: 30% 70%;
@@ -139,7 +136,7 @@ export default {
   box-sizing: border-box;
 }
 .ubi-title {
-  font-family:  "Archivo Black", sans-serif;
+  font-family: "Archivo Black", sans-serif;
   font-size: 32px;
   margin-bottom: 32px;
 }
