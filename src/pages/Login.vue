@@ -55,7 +55,7 @@
       </div>
     </div>
   </div>
-
+  <router-link to="/checkpage">CHECKPAGE</router-link>
 </template>
 
 <script>
