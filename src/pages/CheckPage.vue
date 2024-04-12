@@ -23,7 +23,6 @@
   justify-content: center;
   box-sizing: border-box;
 }
-
 .checkpage-img img {
   height: 112%;
   width: 112%;
@@ -32,7 +31,6 @@
   justify-content: center;
 
 }
-
 .checkpage-message {
   display: flex;
   flex-direction: column;
@@ -46,7 +44,6 @@
   color: #000000;
   font-size: 25px;
 }
-
 .check-email {
   color: #000000;
   margin-top: 10px;

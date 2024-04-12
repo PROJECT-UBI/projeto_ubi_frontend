@@ -55,7 +55,6 @@
       </div>
     </div>
   </div>
-  <router-link to="/checkpage">CHECKPAGE</router-link>
 </template>
 
 <script>
@@ -158,6 +157,7 @@ export default {
   font-size: 20px;
 }
 .welcome{
+  font-family: $secondary-font;
   color: #780000;
   font-size: 35px;
   margin-top: 17px;

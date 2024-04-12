@@ -6,7 +6,9 @@
       </div>
     </div>
     <div class="ubi-form">
-      <div class="ubi-title">{{ $t('reset.UBI') }}</div>
+      <div class="ubi-title">
+        {{ $t('reset.UBI') }}
+      </div>
       <div class="ubi-input">
         <UbiInput 
           :label="$t('reset.label_password')" 
@@ -46,8 +48,6 @@
 import UbiInput from '../components/Input.vue';
 import UbiButton from '../components/Button.vue';
 import ChooseLanguage from '../components/ChooseLanguage.vue';
-import User from '../components/Icons/User.vue';
-import Email from '../components/Icons/Email.vue';
 import Locker from '../components/Icons/Locker.vue';
 
 export default {
@@ -85,7 +85,6 @@ export default {
   height: 100vh;
   width: 100vw;
 }
-
 .ubi-form {
   padding-left: 35%;
   padding-right: 30%;
@@ -95,12 +94,9 @@ export default {
   text-align: center;
   box-sizing: border-box;
 }
-
-.ubi-title {
-  font-size: 32px;
+.ubi-title{
   margin-bottom: 32px;
 }
-
 .ubi-input {
   display: flex;
   flex-direction: column;
@@ -108,18 +104,15 @@ export default {
   margin-bottom: 30px;
   color: #373737;
 }
-
 .ubi-banner {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 70%;
 }
-
 .button-reset {
   margin-bottom: 20px;
 }
-
 .resetpassword-img {
   height: 100%;
   width: 100%;

@@ -119,7 +119,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .ubi-register {
   display: grid;
   grid-template-columns: 30% 70%;
@@ -136,7 +136,7 @@ export default {
   box-sizing: border-box;
 }
 .ubi-title {
-  font-family:  "Archivo Black", sans-serif;
+  font-family: "Archivo Black", sans-serif;
   font-size: 32px;
   margin-bottom: 32px;
 }
