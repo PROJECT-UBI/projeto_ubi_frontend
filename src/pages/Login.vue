@@ -29,8 +29,8 @@
           <span class="forgot" @click="goToForgotPassword">{{ $t('login.forgot') }}</span>
         </div>
       </div>
-      <UbiButton 
-        :label="$t('login.login')" 
+      <UbiButton
+        :label="$t('login.login')"
         :handleClick="login">
       </UbiButton>
       <div class="no-account" @click="goToRegister">
@@ -94,6 +94,9 @@ export default {
     },
     goToForgotPassword() {
       this.$router.push('/forgotpassword');
+    },
+    login() {
+      this.$router.push('/home');
     },
   },
 };
