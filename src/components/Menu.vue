@@ -3,35 +3,40 @@
     class="ubi-menu"
     :class="[expanded ? 'expand' : '']"
   >
-    <div class="item-container stroke">
+    <div
+      class="item-container stroke"
+      :class="{'selected': getActivePage('/home')}"
+    >
       <MapIcon/>
-      <span class="labels">Localização</span>
+      <span class="labels">{{ $t('menu.location') }}</span>
     </div>
-    <div class="item-container stroke">
+    <div
+      class="item-container stroke"
+    >
       <File/>
-      <span class="labels">Fichas Médicas</span>
+      <span class="labels">{{ $t('menu.medical_records') }}</span>
     </div>
     <div class="item-container fill">
       <Bracelet/>
-      <span class="labels">Pulseiras</span>
+      <span class="labels">{{ $t('menu.bracelets') }}</span>
     </div>
     <div class="item-container stroke">
       <Users/>
-      <span class="labels">Responsáveis</span>
+      <span class="labels">{{ $t('menu.caretakers') }}</span>
     </div>
     <div class="item-container stroke">
       <Settings/>
-      <span class="labels">Configurações</span>
+      <span class="labels">{{ $t('menu.settings') }}</span>
     </div>
     <div class="item-container fill">
       <Help/>
-      <span class="labels">Ajuda</span>
+      <span class="labels">{{ $t('menu.help') }}</span>
     </div>
     <div class="item-container stroke" @click="goTo('/')">
       <Logout/>
-      <span class="labels">Sair</span>
+      <span class="labels">{{ $t('menu.exit') }}</span>
     </div>
-    <div class="item-container stroke" @click="toggleMenu">
+    <div class="item-container stroke icon-expand" @click="toggleMenu">
       <Expand/>
     </div>
   </div>
@@ -64,6 +69,13 @@ export default {
     },
     goTo(path) {
       this.$router.push(path);
+    },
+    getActivePage(path) {
+      console.log('AQUI', this.$route.path, path);
+      if (this.$route.path === path) {
+        return true;
+      }
+      return false;
     },
   },
 };
@@ -117,5 +129,21 @@ export default {
   justify-content: start;
   padding-left: 16px;
   gap: 24px;
+}
+.selected {
+  background-color: #780000;
+  color: white;
+  border-radius: 20px;
+}
+.selected.stroke :deep(svg path){
+  stroke: white;
+}
+.selected.fill :deep(svg path){
+  fill: white;
+}
+.expand .item-container.icon-expand{
+  transform: rotate(180deg);
+  justify-content: end;
+  padding-right: 16px;
 }
 </style>

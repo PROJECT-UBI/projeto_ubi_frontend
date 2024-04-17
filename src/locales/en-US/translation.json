@@ -46,5 +46,14 @@
   "checkpage": {
     "email-sent": "The password reset email has been sent!",
     "check-email": "Please check your inbox"
+  },
+  "menu": {
+    "location": "Location",
+    "medical_records": "Medical Records",
+    "bracelets": "Bracelets",
+    "caretakers": "Caretakers",
+    "settings": "Settings",
+    "help": "Help",
+    "exit": "Exit"
   }
 }
