@@ -46,5 +46,14 @@
   "checkpage": {
     "email-sent": "O e-mail de redefinição de senha foi enviado!",
     "check-email": "Cheque sua caixa de entrada"
+  },
+  "menu": {
+    "location": "Localização",
+    "medical_records": "Fichas Médicas",
+    "bracelets": "Pulseiras",
+    "caretakers": "Responsáveis",
+    "settings": "Configurações",
+    "help": "Ajuda",
+    "exit": "Sair"
   }
 }

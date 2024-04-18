@@ -7,6 +7,7 @@ import Register from './pages/Register.vue';
 import ForgotPassword from './pages/ForgotPassword.vue';
 import ResetPassword from './pages/ResetPassword.vue';
 import CheckPage from './pages/CheckPage.vue';
+import Home from './pages/Home.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -15,7 +16,8 @@ const router = createRouter({
     { path: '/register', name: 'Register', component: Register },
     { path: '/forgotpassword', name: 'ForgotPassword', component: ForgotPassword },
     { path: '/resetpassword', name: 'ResetPassword', component: ResetPassword },
-    { path: '/checkpage', name: 'CheckPage', component: CheckPage},
+    { path: '/checkpage', name: 'CheckPage', component: CheckPage },
+    { path: '/home', name: 'Home', component: Home },
   ],
 });
 
