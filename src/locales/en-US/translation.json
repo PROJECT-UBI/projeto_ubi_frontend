@@ -55,5 +55,10 @@
     "settings": "Settings",
     "help": "Help",
     "exit": "Exit"
+  },
+  "home": {
+    "UBI": "No bracelets were found!",
+    "subtitle": "Would you like to register one?",
+    "home": "Register a bracelet"
   }
 }
