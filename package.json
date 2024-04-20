@@ -6,7 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --ext .ts,.tsx ./src",
+    "fix": "yarn format && yarn lint:fix",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "fix:eslint": "eslint src --ext .js,.ts,.jsx,.tsx --fix",
+    "fix:prettier": "prettier --write ."
   },
   "dependencies": {
     "i18next": "^23.10.1",
@@ -26,12 +32,5 @@
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
     "vite": "^5.1.6"
-  },
-  "scripts": {
-    "lint": "eslint --ext .ts,.tsx ./src",
-    "fix": "yarn format && yarn lint:fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
-    "fix:eslint": "eslint src --ext .js,.ts,.jsx,.tsx --fix",
-    "fix:prettier": "prettier --write ."
+  }
 }
