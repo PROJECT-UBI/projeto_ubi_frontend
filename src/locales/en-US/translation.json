@@ -1,3 +1,59 @@
 {
-  "hello": "Hello"
+  "register": {
+    "UBI": "Project UBI",
+    "label_name": "Enter your name",
+    "label_surname": "Enter your surname",
+    "label_email": "Enter your email",
+    "label_password": "Enter your password",
+    "label_confirm_password": "Confirm your password",
+    "placeholder_name": "name",
+    "placeholder_surname": "surname",
+    "placeholder_email": "name@example.com",
+    "placeholder_password": "password",
+    "placeholder_confirm_password": "password",
+    "register": "Sign-up",
+    "have_account": "Already have an account?",
+    "login": " Log in"
+  },
+  "login": {
+    "UBI": "Project UBI",
+    "label_email": "Enter your email",
+    "label_password": "Enter your password",
+    "placeholder_email": "name@example.com",
+    "placeholder_password": "password",
+    "login": " Log in",
+    "no_account": "Don't have an account?",
+    "register": " Sign-up",
+    "forgot": "Forgot my password",
+    "welcome-back": "Great to see you again",
+    "welcome": "Welcome back!"
+  },
+  "forgot_password": {
+    "UBI": "Projeto UBI",
+    "description": "Please enter the email address associated with the account you wish to recover the password for, and we will send a recovery link",
+    "placeholder_email": "name@example.com",
+    "button": "Send",
+    "back_login": "Back to login"
+  },
+  "reset": {
+    "UBI": "Reset Password",
+    "label_password": "Enter your password",
+    "label_confirm_password": "Confirme your password",
+    "reset": "Reset password",
+    "placeholder_password": "Password",
+    "placeholder_confirm_password": "Confirm your Password"
+  },
+  "checkpage": {
+    "email-sent": "The password reset email has been sent!",
+    "check-email": "Please check your inbox"
+  },
+  "menu": {
+    "location": "Location",
+    "medical_records": "Medical Records",
+    "bracelets": "Bracelets",
+    "caretakers": "Caretakers",
+    "settings": "Settings",
+    "help": "Help",
+    "exit": "Exit"
+  }
 }

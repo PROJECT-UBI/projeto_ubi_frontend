@@ -6,26 +6,27 @@
 
 <script>
 export default {
+  name: 'UbiButton',
   props: {
     label: {
       type: String,
       default: '',
     },
-    color:{
+    color: {
       type: String,
-      default: '#780000'
+      default: '#780000',
     },
     handleClick: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
   },
   computed: {
     getBackground() {
-      return `background-color: ${this.color}`
-    }
+      return `background-color: ${this.color}`;
+    },
   },
-}  
+};
 </script>
 
 <style>
@@ -39,5 +40,6 @@ export default {
   align-items: center;
   box-shadow: -3px 5px 15px -8px rgba(127, 143, 164, 0.3);
   cursor: pointer;
+  font-size: 20px;
 }
 </style>
