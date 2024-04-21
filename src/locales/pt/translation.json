@@ -55,5 +55,10 @@
     "settings": "Configurações",
     "help": "Ajuda",
     "exit": "Sair"
+  },
+  "home": {
+    "UBI": "Nenhuma pulseira foi encontrada!",
+    "subtitle": "Deseja realizar o cadastro?",
+    "home": "Cadastro da Pulseira"
   }
 }
