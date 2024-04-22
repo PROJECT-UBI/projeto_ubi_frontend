@@ -57,7 +57,7 @@
           </template>
         </UbiInput>
       </div>
-      <UbiButton :label="$t('register.register')" :handleClick="goTo"></UbiButton>
+      <UbiButton :label="$t('register.register')" :handleClick="register"></UbiButton>
       <div class="have-account">
         <span>{{ $t('register.have_account') }}</span>
         <span class="login" @click="goTo">{{ $t('register.login') }}</span>
@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import UbiInput from '../components/Input.vue';
 import UbiButton from '../components/Button.vue';
 import User from '../components/Icons/User.vue';
@@ -114,6 +115,23 @@ export default {
     },
     confirmPassword(password) {
       this.password_confirm = password;
+    },
+    register() {
+      const data = {
+        name: 'Isabella',
+        last_name: 'Campos',
+        email: 'isabellaemiliano14@gmail.com',
+        password: 'batatinha123',
+      };
+
+      axios.post('http://ubi-backend.test/api/user', data).then((response) => {
+        console.log(response);
+      });
+
+      // headers: {
+      //   Accept: 'application/json',
+      //   'Content-Type': 'application/json',
+      // },
     },
   },
 };
