@@ -128,10 +128,15 @@ export default {
         console.log(response);
       });
 
-      // headers: {
-      //   Accept: 'application/json',
-      //   'Content-Type': 'application/json',
-      // },
+      axios({
+        method: 'post',
+        url: 'http://ubi-backend.test/api/user',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        data,
+      });
     },
   },
 };
