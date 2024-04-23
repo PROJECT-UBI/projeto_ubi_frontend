@@ -11,7 +11,7 @@
         12.2086 12.7149 11.875 11.875 11.875H7.12504C6.28519 11.875 5.47973 12.2086 4.88587
         12.8025C4.292 13.3964 3.95837 14.2018 3.95837 15.0417V16.625
       "
-      stroke="#949090"
+      :stroke="color"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -21,7 +21,7 @@
         3.79276 11.2489 2.375 9.50004 2.375C7.75114 2.375 6.33337 3.79276 6.33337
         5.54167C6.33337 7.29057 7.75114 8.70833 9.50004 8.70833Z
       "
-      stroke="#949090"
+      :stroke="color"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -33,7 +33,7 @@ export default {
   name: 'IconUser',
   props: {
     size: { type: [String, Number], default: 19 },
-    color: { type: String },
+    color: { type: String, default: '#949090' },
     colorHover: { type: String },
   },
 };
