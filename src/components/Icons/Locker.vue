@@ -24,7 +24,7 @@
         7.12496 4.75008V6.33342H11.875V4.75008C11.875 4.12019 11.6247 3.5161 11.1793
         3.0707C10.7339 2.6253 10.1298 2.37508 9.49996 2.37508Z
       "
-      fill="#949090"
+      :fill="color"
     />
   </svg>
 </template>
@@ -33,7 +33,7 @@ export default {
   name: 'IconLocker',
   props: {
     size: { type: [String, Number], default: 19 },
-    color: { type: String },
+    color: { type: String, default: '#949090' },
     colorHover: { type: String },
   },
 };

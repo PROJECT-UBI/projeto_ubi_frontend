@@ -8,6 +8,7 @@ import ForgotPassword from './pages/ForgotPassword.vue';
 import ResetPassword from './pages/ResetPassword.vue';
 import CheckPage from './pages/CheckPage.vue';
 import Home from './pages/Home.vue';
+import Settings from './pages/Settings.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -18,6 +19,7 @@ const router = createRouter({
     { path: '/resetpassword', name: 'ResetPassword', component: ResetPassword },
     { path: '/checkpage', name: 'CheckPage', component: CheckPage },
     { path: '/home', name: 'Home', component: Home },
+    { path: '/settings', name: 'Settings', component: Settings },
   ],
 });
 

@@ -24,7 +24,11 @@
       <Users/>
       <span class="labels">{{ $t('menu.caretakers') }}</span>
     </div>
-    <div class="item-container stroke">
+    <div
+      class="item-container stroke"
+      :class="{'selected': getActivePage('/settings')}"
+      @click="goTo('/settings')"
+    >
       <Settings/>
       <span class="labels">{{ $t('menu.settings') }}</span>
     </div>
@@ -71,7 +75,6 @@ export default {
       this.$router.push(path);
     },
     getActivePage(path) {
-      console.log('AQUI', this.$route.path, path);
       if (this.$route.path === path) {
         return true;
       }
