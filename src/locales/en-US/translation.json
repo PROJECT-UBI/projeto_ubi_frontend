@@ -60,5 +60,19 @@
     "UBI": "No bracelets were found!",
     "subtitle": "Would you like to register one?",
     "home": "Register a bracelet"
+  },
+  "settings": {
+    "settings": "Settings",
+    "profile_title": "Manage user profile",
+    "password_title": "Reset access password",
+    "language_title": "Change system language",
+    "current_password": "Enter your current password",
+    "new_password": "Enter a password",
+    "confirm_password": "Confirm the new password",
+    "forgot_password": "Forgot my password",
+    "reset_password": "Reset password",
+    "display_language": "Select display language",
+    "portuguese": "Portuguese",
+    "english": "English"
   }
 }

@@ -4,7 +4,7 @@
     <div class="ubi-settings">
       <div class="ubi-select">
         <div class="ubi-select-container">
-          <span class="ubi-title">Configurações</span>
+          <span class="ubi-title">{{ $t('settings.settings') }}</span>
           <div class="ubi-buttons">
             <div
               class="settings-options stroke"
@@ -12,7 +12,7 @@
               @click="changeTab('personal')"
             >
               <User size="24" color="#780000"/>
-              <span>Gerenciar o perfil do usuário</span>
+              <span>{{ $t('settings.profile_title') }}</span>
             </div>
             <div
               class="settings-options fill"
@@ -20,7 +20,7 @@
               @click="changeTab('password')"
             >
               <Locker size="24" color="#780000"/>
-              <span>Redefinir senha de acesso</span>
+              <span>{{ $t('settings.password_title') }}</span>
             </div>
             <div
               class="settings-options fill"
@@ -28,13 +28,13 @@
               @click="changeTab('language')"
             >
               <Globe size="23" color="#780000"/>
-              <span>Alterar a linguagem do sistema</span>
+              <span>{{ $t('settings.language_title') }}</span>
             </div>
           </div>
         </div>
       </div>
       <div v-if="showSettings === 'personal'" class="ubi-personal-settings">
-        <span class="ubi-title">Gerenciar o perfil do usuário</span>
+        <span class="ubi-title">{{ $t('settings.profile_title') }}</span>
         <div class="ubi-form">
           <UbiInput
           :label="$t('register.label_name')"
@@ -64,10 +64,10 @@
         </div>
       </div>
       <div v-else-if="showSettings === 'password'" class="ubi-password-settings">
-        <span class="ubi-title">Redefinir senha de acesso</span>
+        <span class="ubi-title">{{ $t('settings.password_title') }}</span>
         <div class="ubi-form-password">
           <UbiInput
-            label="Insira sua senha atual"
+            :label="$t('settings.current_password')"
             :placeholder="$t('register.placeholder_confirm_password')"
             type="password"
           >
@@ -76,10 +76,10 @@
             </template>
           </UbiInput>
           <div class="forgot-password" @click="forgotPassword">
-            <span>Esqueci minha senha</span>
+            <span>{{ $t('settings.forgot_password') }}</span>
           </div>
           <UbiInput
-            label="Insira uma senha"
+            :label="$t('settings.new_password')"
             :placeholder="$t('register.placeholder_confirm_password')"
             class="input-newpassword"
             type="password"
@@ -89,7 +89,7 @@
             </template>
           </UbiInput>
           <UbiInput
-            label="Confirme a nova senha"
+            :label="$t('settings.confirm_password')"
             :placeholder="$t('register.placeholder_confirm_password')"
             class="input-newpassword"
             type="password"
@@ -98,14 +98,14 @@
               <Locker/>
             </template>
           </UbiInput>
-          <UbiButton label="Redefinir senha" :handleClick="goTo"/>
+          <UbiButton :label="$t('settings.reset_password')" :handleClick="goTo"/>
         </div>
       </div>
       <div v-else-if="showSettings === 'language'" class="ubi-language-settings">
-        <span class="ubi-title">Alterar a linguagem do sistema</span>
+        <span class="ubi-title">{{ $t('settings.language_title') }}</span>
         <div class="ubi-card">
           <span class="title-card">
-            Selecione o idioma de exibição (Select the display language)
+            {{ $t('settings.display_language') }}
           </span>
           <div class="ubi-flags">
             <div class="ubi-language-container">
@@ -116,7 +116,7 @@
                 @click="changeLanguage('pt')"
               />
               <div>
-                <span>Português</span>
+                <span>{{ $t('settings.portuguese') }}</span>
               </div>
             </div>
             <div class="ubi-language-container">
@@ -127,14 +127,14 @@
                 @click="changeLanguage('en')"
               />
               <div>
-                <span>Inglês</span>
+                <span>{{ $t('settings.english') }}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div v-else class="ubi-image">
-        <span class="ubi-title">Configurações</span>
+        <span class="ubi-title">{{ $t('settings.settings') }}</span>
         <img class="img" src="../assets/settings.svg">
       </div>
     </div>
