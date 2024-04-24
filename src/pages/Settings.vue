@@ -219,6 +219,7 @@ export default {
   display: flex;
   padding-top: 35%;
   justify-content: center;
+  background-color: #F5F5F5;
 }
 .ubi-buttons {
   width: 100%;
@@ -311,9 +312,7 @@ export default {
   width: 100%;
   border-radius: 50px;
   display: flex;
-  justify-content: baseline;
   align-items: center;
-  box-shadow: -3px 5px 15px -8px rgba(127, 143, 164, 0.3);
   gap: 8px;
   cursor: pointer;
   font-size: 20px;
