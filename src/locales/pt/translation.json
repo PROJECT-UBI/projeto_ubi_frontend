@@ -55,5 +55,15 @@
     "settings": "Configurações",
     "help": "Ajuda",
     "exit": "Sair"
+  },
+  "helpPage": {
+    "title":"Fale Conosco",
+    "helpMessage":"A UBI está aqui para ouvir você! Caso tenha alguma pergunta, comentário ou preocupação, estamos prontos para ajudar e ansiosos para ouvir o que você tem a dizer!",
+    "contactMessage": "Contate-nos!",
+    "helpButton": "AAAAA",
+    "emailMessage": "E-mail:",
+    "email": "projetoUBI@gmail.com",
+    "callCenter": "Central de Atendimento:",
+    "ubiNumber": "(31)940028922"
   }
 }
