@@ -117,25 +117,29 @@ export default {
       this.password_confirm = password;
     },
     register() {
-      const data = {
-        name: 'Isabella',
-        last_name: 'Campos',
-        email: 'isabellaemiliano14@gmail.com',
-        password: 'batatinha123',
-      };
-
-      axios.post('http://ubi-backend.test/api/user', data).then((response) => {
-        console.log(response);
-      });
+      // const data = {
+      //   name: 'Isabella',
+      //   last_name: 'Campos',
+      //   email: 'isabellaemiliano14@gmail.com',
+      //   password: 'batatinha123',
+      // };
 
       axios({
         method: 'post',
         url: 'http://ubi-backend.test/api/user',
+        data: {
+          name: 'Isabella',
+          last_name: 'Campos',
+          email: 'isabellaemiliano14@gmail.com',
+          password: 'batatinha123',
+        },
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': '*',
+          'Access-Control-Allow-Credentials': true,
         },
-        data,
       });
     },
   },
