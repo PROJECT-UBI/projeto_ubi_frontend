@@ -7,7 +7,19 @@
       <div class="input-icon">
         <slot name="icon"></slot>
       </div>
+      <textarea
+        v-if="type === 'textarea'"
+        class="ubi-input-put"
+        :class="{'error': error}"
+        :type="type"
+        :placeholder="placeholder"
+        :value="modelValue"
+        :disabled="disabled"
+        @input.stop="$emit('input', $event.target.value)"
+      >
+      </textarea>
       <input
+        v-else
         class="ubi-input-put"
         :class="{'error': error}"
         :type="type"
