@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     goTo(){
-      this.$router.push('/')
+      this.$router.push('/bracelet')
     }
   }
 };

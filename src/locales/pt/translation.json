@@ -60,5 +60,14 @@
     "UBI": "Nenhuma pulseira foi encontrada!",
     "subtitle": "Deseja realizar o cadastro?",
     "home": "Cadastro da Pulseira"
+  },
+  "bracelet": {
+    "UBI": "Cadastro de pulseira",
+    "message": "Insira as informações abaixo para cadastrar uma nova pulseira!",
+    "label_name": "Insira o nome da pulseira",
+    "placeholder_name": "Nome",
+    "label_code": "Insira o código da pulseira",
+    "placeholder_code": "Código da pulseira",
+    "bracelet": "Salvar"
   }
 }

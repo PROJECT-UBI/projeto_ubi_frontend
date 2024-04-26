@@ -60,5 +60,14 @@
     "UBI": "No bracelets were found!",
     "subtitle": "Would you like to register one?",
     "home": "Register a bracelet"
+  },
+  "bracelet": {
+    "UBI": "Bracelet registration",
+    "message": "Enter the following information to register a new bracelet!",
+    "label_name": "Enter a bracelet name",
+    "placeholder_name": "Name",
+    "label_code": "Enter a bracelet code",
+    "placeholder_code": "Bracelet code",
+    "bracelet": "Save"
   }
 }
