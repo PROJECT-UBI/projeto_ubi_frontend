@@ -4,7 +4,8 @@
       <Flag
         :image="lang.image"
         :isSelected="$i18next.resolvedLanguage === lang.language"
-        @click="changeLanguage(lang.language)"/>
+        @click="changeLanguage(lang.language)"
+      />
     </div>
   </div>
 </template>

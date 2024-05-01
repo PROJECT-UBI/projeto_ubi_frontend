@@ -6,8 +6,8 @@
     <div class="ubi-home-content">
       <div class="ubi-title">{{ $t('home.UBI') }}</div>
       <div class="ubi-subtitle">{{ $t('home.subtitle') }}</div>
-      <UbiButton 
-        :label="$t('home.home')" 
+      <UbiButton
+        :label="$t('home.home')"
         :handleClick="goTo"
         class="button-home">
       </UbiButton>
@@ -21,9 +21,9 @@ import UbiButton from '../components/Button.vue';
 
 export default {
   name: 'HomePage',
-  components: { 
+  components: {
     UbiMenu,
-    UbiButton, 
+    UbiButton,
   },
   methods: {
     goTo(){
