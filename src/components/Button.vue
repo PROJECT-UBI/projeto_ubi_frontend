@@ -1,5 +1,9 @@
 <template>
-  <div class="button" :style="getBackground" @click="handleClick">
+  <div
+    :class="[secondary ? 'button-secondary' : 'button']"
+    @click="handleClick"
+  >
+    <slot name="icon"></slot>
     {{ label }}
   </div>
 </template>
@@ -20,16 +24,15 @@ export default {
       type: Function,
       default: () => {},
     },
-  },
-  computed: {
-    getBackground() {
-      return `background-color: ${this.color}`;
+    secondary: {
+      type: Boolean,
+      default: false,
     },
   },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .button {
   color: #FFFF;
   height: 40px;
@@ -41,5 +44,22 @@ export default {
   box-shadow: -3px 5px 15px -8px rgba(127, 143, 164, 0.3);
   cursor: pointer;
   font-size: 20px;
+  background-color: #780000;
+}
+.button-secondary {
+  color: #780000;
+  height: 40px;
+  width: 100%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -3px 5px 15px -8px rgba(127, 143, 164, 0.3);
+  cursor: pointer;
+  font-size: 20px;
+  &:hover {
+    background-color: #780000;
+    color: #FFFF;
+  }
 }
 </style>

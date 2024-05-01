@@ -69,5 +69,19 @@
     "label_code": "Insira o código da pulseira",
     "placeholder_code": "Código da pulseira",
     "bracelet": "Salvar"
+  },
+  "settings": {
+    "settings": "Configurações",
+    "profile_title": "Gerenciar o perfil do usuário",
+    "password_title": "Redefinir a senha de acesso",
+    "language_title": "Alterar a linguagem do sistema",
+    "current_password": "Insira sua senha atual",
+    "new_password": "Insira uma senha",
+    "confirm_password": "Confirme a nova senha",
+    "forgot_password": "Esqueci minha senha",
+    "reset_password": "Redefinir senha",
+    "display_language": "Selecione o idioma de exibição",
+    "portuguese": "Português",
+    "english": "Inglês"
   }
 }
