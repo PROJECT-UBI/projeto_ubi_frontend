@@ -71,7 +71,6 @@ export default {
       this.$router.push(path);
     },
     getActivePage(path) {
-      console.log('AQUI', this.$route.path, path);
       if (this.$route.path === path) {
         return true;
       }
