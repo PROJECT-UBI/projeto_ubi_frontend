@@ -116,31 +116,35 @@ export default {
     confirmPassword(password) {
       this.password_confirm = password;
     },
-    register() {
-      // const data = {
-      //   name: 'Isabella',
-      //   last_name: 'Campos',
-      //   email: 'isabellaemiliano14@gmail.com',
-      //   password: 'batatinha123',
-      // };
-
-      axios({
-        method: 'post',
-        url: 'http://ubi-backend.test/api/user',
-        data: {
-          name: 'Isabella',
-          last_name: 'Campos',
-          email: 'isabellaemiliano14@gmail.com',
-          password: 'batatinha123',
-        },
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': '*',
-          'Access-Control-Allow-Credentials': true,
-        },
-      });
+    async register() {
+      if (!this.name || !this.surname || !this.email || !this.password || !this.password_confirm) {
+        return;
+      }
+      if (this.password !== this.password_confirm) {
+        return;
+      }
+      try {
+        const response = await axios({
+          method: 'post',
+          url: 'http://ubi-backend.test/api/user',
+          data: {
+            name: this.name,
+            last_name: this.surname,
+            email: this.email,
+            password: this.password,
+          },
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+            'Access-Control-Allow-Credentials': true,
+          },
+        });
+        return response;
+      } catch (error) {
+        return error;
+      }
     },
   },
 };
