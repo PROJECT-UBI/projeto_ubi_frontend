@@ -16,7 +16,7 @@
       <File/>
       <span class="labels">{{ $t('menu.medical_records') }}</span>
     </div>
-    <div class="item-container fill">
+    <div class="item-container fill" @click="goTo('/bracelet')" :class="{'selected': getActivePage('/bracelet')}">
       <Bracelet/>
       <span class="labels">{{ $t('menu.bracelets') }}</span>
     </div>

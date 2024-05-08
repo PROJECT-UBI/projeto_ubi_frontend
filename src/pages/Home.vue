@@ -26,10 +26,10 @@ export default {
     UbiButton,
   },
   methods: {
-    goTo() {
-      this.$router.push('/');
-    },
-  },
+    goTo(){
+      this.$router.push('/bracelet')
+    }
+  }
 };
 </script>
 
