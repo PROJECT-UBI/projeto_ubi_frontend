@@ -74,5 +74,30 @@
     "display_language": "Selecione o idioma de exibição",
     "portuguese": "Português",
     "english": "Inglês"
+  },
+  "medical_record_register": {
+    "title": "Ficha médica",
+    "subtitle": "Paciente",
+    "label_name": "Nome completo",
+    "placeholder_name": "Entre com o nome",
+    "label_date": "Data de nascimento",
+    "label_cpf": "CPF",
+    "placeholder_cpf": "Insira seu CPF",
+    "label_height": "Altura",
+    "placeholder_height": "Insira sua altura",
+    "label_weight": "Peso",
+    "placeholder_weight": "Insira seu peso",
+    "label_blood_type": "Tipo sanguíneo",
+    "placeholder_blood_type": "Selecione o tipo sanguíneo",
+    "label_illnesses": "Doenças",
+    "placeholder_illnesses": "Insira as doenças",
+    "label_plan": "Plano de saúde",
+    "placeholder_plan": "Insira o plano de saúde",
+    "label_surgery": "Cirurgias",
+    "label_allergy": "Alergias",
+    "label_medications": "Medicamentos",
+    "radio_yes": "Sim",
+    "radio_no": "Não",
+    "enter_text": "Entre com o texto"
   }
 }
