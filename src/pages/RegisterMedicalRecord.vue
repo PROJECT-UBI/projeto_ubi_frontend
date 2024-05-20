@@ -8,11 +8,14 @@
     <div class="medicalRecord-form">
       <div class="ubi-title">{{ $t('medical_record_register.title') }}</div>
       <div class="ubi-subtitle">{{ $t('medical_record_register.subtitle') }}</div>
-      <div v-if="!teste" class="ubi-form">
+      <div v-if="step === 1" class="ubi-form">
         <UbiInput
           :label="$t('medical_record_register.label_name')"
           :placeholder="$t('medical_record_register.placeholder_name')"
           type="text"
+          obligatory
+          v-model="name"
+          @input="getName"
         >
           <template #icon>
             <User/>
@@ -20,7 +23,10 @@
         </UbiInput>
         <UbiInput
           :label="$t('medical_record_register.label_date')"
+          obligatory
           type="date"
+          v-model="dateBirth"
+          @input="getDate"
         >
           <template #icon>
             <Calendar/>
@@ -30,6 +36,9 @@
           :label="$t('medical_record_register.label_cpf')"
           :placeholder="$t('medical_record_register.placeholder_cpf')"
           type="text"
+          obligatory
+          v-model="cpf"
+          @input="getCPF"
         >
           <template #icon>
             <User/>
@@ -39,11 +48,21 @@
           :label="$t('medical_record_register.label_height')"
           :placeholder="$t('medical_record_register.placeholder_height')"
           type="text"
-        />
+          obligatory
+          v-model="height"
+          @input="getHeight"
+        >
+          <template #icon>
+            <Ruler/>
+          </template>
+        </UbiInput>
         <UbiInput
           :label="$t('medical_record_register.label_weight')"
           :placeholder="$t('medical_record_register.placeholder_weight')"
           type="text"
+          obligatory
+          v-model="weight"
+          @input="getWeight"
         >
           <template #icon>
             <Hanging/>
@@ -52,6 +71,7 @@
         <UbiInput
           :label="$t('medical_record_register.label_blood_type')"
           :placeholder="$t('medical_record_register.placeholder_blood_type')"
+          obligatory
         >
           <template #icon>
             <Drop/>
@@ -63,11 +83,21 @@
           :label="$t('medical_record_register.label_illnesses')"
           :placeholder="$t('medical_record_register.placeholder_illnesses')"
           type="textarea"
-        />
+          obligatory
+          v-model="illnesses"
+          @input="getIllnesses"
+        >
+          <template #icon>
+            <Virus/>
+          </template>
+        </UbiInput>
         <UbiInput
           :label="$t('medical_record_register.label_plan')"
           :placeholder="$t('medical_record_register.placeholder_plan')"
           type="text"
+          obligatory
+          v-model="plan"
+          @input="getPlan"
         >
           <template #icon>
             <Hospital/>
@@ -77,6 +107,7 @@
           <span class="ubi-radioTitle">
             {{ $t('medical_record_register.label_surgery') }}
           </span>
+          <span class="ubi-obligatory">*</span>
           <div class="ubi-radioButtons">
             <Radio
               :value="true"
@@ -95,12 +126,15 @@
             v-if="surgery"
             :placeholder="$t('medical_record_register.enter_text')"
             type="textarea"
+            v-model="descriptionSurgery"
+            @input="getDescriptionSurgery"
           />
         </div>
         <div>
           <span class="ubi-radioTitle">
             {{ $t('medical_record_register.label_allergy') }}
           </span>
+          <span class="ubi-obligatory">*</span>
           <div class="ubi-radioButtons">
             <Radio
               :value="true"
@@ -119,12 +153,15 @@
             v-if="allergy"
             :placeholder="$t('medical_record_register.enter_text')"
             type="textarea"
+            v-model="descriptionAllergy"
+            @input="getDescriptionAllergy"
           />
         </div>
         <div>
           <span class="ubi-radioTitle">
             {{ $t('medical_record_register.label_medications') }}
           </span>
+          <span class="ubi-obligatory">*</span>
           <div class="ubi-radioButtons">
             <Radio
               :value="true"
@@ -143,27 +180,40 @@
             v-if="medications"
             :placeholder="$t('medical_record_register.enter_text')"
             type="textarea"
+            v-model="descriptionMedications"
+            @input="getDescriptionMedications"
           />
         </div>
       </div>
       <div class="buttons-container">
-        <div class="button">
+        <div v-if="step === 2" class="button">
           <UbiButton
             secondary
-            :handleClick="() => nextPage()"
+            :handleClick="() => backPage()"
           >
             <template #icon>
               <Left/>
             </template>
           </UbiButton>
         </div>
-        <div class="button">
+        <div v-if="step !== 2" class="button">
           <UbiButton
             secondary
             :handleClick="() => nextPage()"
           >
             <template #icon>
               <ChevronRight/>
+            </template>
+          </UbiButton>
+        </div>
+        <div v-if="step === 2" class="button">
+          <UbiButton
+            secondary
+            color="#669BBC"
+            :handleClick="() => nextPage()"
+          >
+            <template #icon>
+              <Check/>
             </template>
           </UbiButton>
         </div>
@@ -183,22 +233,71 @@ import Drop from '../components/Icons/Drop.vue';
 import Hospital from '../components/Icons/Hospital.vue';
 import ChevronRight from '../components/Icons/ChevronRight.vue';
 import Left from '../components/Icons/Left.vue';
+import Check from '../components/Icons/Check.vue';
+import Ruler from '../components/Icons/Ruler.vue';
+import Virus from '../components/Icons/Virus.vue';
 
 export default {
   components: {
-    UbiInput, UbiButton, ChevronRight, Radio, User, Calendar, Hanging, Drop, Hospital, Left,
+    UbiInput,
+    UbiButton,
+    ChevronRight,
+    Radio,
+    User,
+    Calendar,
+    Hanging,
+    Drop,
+    Hospital,
+    Left,
+    Check,
+    Ruler,
+    Virus,
   },
   data() {
     return {
-      teste: false,
+      name: null,
+      dateBirth: null,
+      cpf: null,
+      height: null,
+      weight: null,
+      illnesses: null,
+      plan: null,
       surgery: false,
       allergy: false,
       medications: false,
+      descriptionSurgery: null,
+      descriptionAllergy: null,
+      descriptionMedications: null,
+      step: 1,
     };
   },
   methods: {
     nextPage() {
-      this.teste = !this.teste;
+      this.step = 2;
+    },
+    backPage() {
+      this.step = 1;
+    },
+    getName(name) {
+      this.name = name;
+    },
+    getDate(date) {
+      this.dateBirth = date;
+    },
+    getCPF(cpf) {
+      this.cpf = cpf;
+    },
+    getHeight(height) {
+      this.height = height;
+    },
+    getWeight(weight) {
+      this.weight = weight;
+    },
+    getIllnesses(illnesses) {
+      this.illnesses = illnesses;
+    },
+    getPlan(plan) {
+      this.plan = plan;
     },
     hasSurgery(value) {
       this.surgery = value;
@@ -208,6 +307,15 @@ export default {
     },
     takeMedications(value) {
       this.medications = value;
+    },
+    getDescriptionSurgery(surgery) {
+      this.descriptionSurgery = surgery;
+    },
+    getDescriptionAllergy(allergy) {
+      this.descriptionAllergy = allergy;
+    },
+    getDescriptionMedications(medications) {
+      this.descriptionMedications = medications;
     },
   },
 };
@@ -260,6 +368,7 @@ export default {
   display: flex;
   justify-content: end;
   margin-top: 32px;
+  gap: 24px;
 }
 .button {
   width: 8%;
@@ -273,5 +382,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+.ubi-obligatory {
+  color: #780000;
 }
 </style>

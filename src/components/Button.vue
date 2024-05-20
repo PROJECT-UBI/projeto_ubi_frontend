@@ -1,6 +1,7 @@
 <template>
   <div
     :class="[secondary ? 'button-secondary' : 'button']"
+    :style="changeColor"
     @click="handleClick"
   >
     <slot name="icon"></slot>
@@ -27,6 +28,11 @@ export default {
     secondary: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    changeColor() {
+      return `background-color: ${this.color}`;
     },
   },
 };
