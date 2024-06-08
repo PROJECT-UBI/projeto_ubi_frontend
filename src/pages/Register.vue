@@ -2,6 +2,9 @@
   <div class="ubi-register">
     <div class="ubi-form">
       <div class="ubi-title">{{ $t('register.UBI') }}</div>
+      <div class="ubi-toastContainer">
+        <div class="ubi-toast">{{ this.error }}</div>
+      </div>
       <div class="ubi-inputs">
         <UbiInput
           :label="$t('register.label_name')"
@@ -95,6 +98,7 @@ export default {
       email: '',
       password: '',
       password_confirm: '',
+      error: '',
     };
   },
   methods: {
@@ -117,12 +121,22 @@ export default {
       this.password_confirm = password;
     },
     async register() {
-      if (!this.name || !this.surname || !this.email || !this.password || !this.password_confirm) {
-        return;
+      if (!this.validadeForm()) {
+        return false; 
       }
-      if (this.password !== this.password_confirm) {
-        return;
+
+      if(!this.validateEmail(this.email)) {
+        return false;
       }
+
+      if(!this.validatePassword(this.password)) {
+        return false;
+      }
+
+      if(!this.matchPasswords()) {
+        return false;
+      }
+
       try {
         const response = await axios({
           method: 'post',
@@ -143,9 +157,59 @@ export default {
         });
         return response;
       } catch (error) {
-        return error;
+        this.error = error.response.data.message;
+        return this.error;
       }
     },
+    validadeForm() {
+      if (!this.name || !this.surname || !this.email || !this.password || !this.password_confirm) {
+        this.error = 'Por favor, preencha todos os campos';
+        return false; 
+      }
+      this.error = '';
+      return true;
+    },
+    validateName() {
+      if (!this.name || !this.surname) {
+        this.error = 'Preencha todos os dados';
+        return false; 
+      }
+      this.error = '';
+      return true;
+    },
+    validateEmail() {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!this.email) {
+        this.error = 'Preencha todos os dados';
+        return false;
+      } else if (!emailPattern.test(this.email)) {
+        this.error = 'E-mail inválido';
+        return false;
+      } else {
+        this.error = '';
+        return true;
+      }
+    },
+    validatePassword() {
+      const passwordPattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+      if (!this.password) {
+        this.error = 'Preencha todos os dados';
+        return false;
+      } else if (!passwordPattern.test(this.password)) {
+        this.error = 'A senha deve conter no mínimo 8 caracteres, letra maiúscula e caracter especial';
+        return false;
+      } else {
+        this.error = '';
+        return true;
+      }
+    },
+    matchPasswords() {
+      if(this.password === this.password_confirm) {
+        return true;
+      }
+      this.error = 'As senhas devem ser iguais';
+      return false;
+    }
   },
 };
 </script>
@@ -195,5 +259,18 @@ export default {
 .login {
   color: #780000;
   cursor: pointer;
+}
+.ubi-toastContainer {
+  display: flex;
+  justify-content: center;
+}
+.ubi-toast {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(179, 9, 9);
+  margin-bottom: 16px;
 }
 </style>
