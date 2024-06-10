@@ -16,7 +16,7 @@
       <File/>
       <span class="labels">{{ $t('menu.medical_records') }}</span>
     </div>
-    <div class="item-container fill">
+    <div class="item-container fill" @click="goTo('/bracelet')" :class="{'selected': getActivePage('/bracelet')}">
       <Bracelet/>
       <span class="labels">{{ $t('menu.bracelets') }}</span>
     </div>
@@ -24,7 +24,11 @@
       <Users/>
       <span class="labels">{{ $t('menu.caretakers') }}</span>
     </div>
-    <div class="item-container stroke">
+    <div
+      class="item-container stroke"
+      :class="{'selected': getActivePage('/settings')}"
+      @click="goTo('/settings')"
+    >
       <Settings/>
       <span class="labels">{{ $t('menu.settings') }}</span>
     </div>
@@ -75,7 +79,6 @@ export default {
       this.$router.push(path);
     },
     getActivePage(path) {
-      console.log('AQUI', this.$route.path, path);
       if (this.$route.path === path) {
         return true;
       }
