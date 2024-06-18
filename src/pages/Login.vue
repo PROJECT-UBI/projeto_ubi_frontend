@@ -78,7 +78,14 @@ export default {
     return {
       email: '',
       password: '',
+      token: '',
     };
+  },
+  watch: {
+    token() {
+      sessionStorage.setItem('token', this.token);
+      this.$router.push('/home');
+    }
   },
   methods: {
     goTo() {
@@ -113,7 +120,7 @@ export default {
             'Access-Control-Allow-Credentials': true,
           },
         });
-        return response;
+        this.token = response.data.token;
       } catch (error) {
         this.error = error.response.data.message;
         return this.error;
