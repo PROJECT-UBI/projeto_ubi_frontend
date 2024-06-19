@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import UbiInput from '../components/Input.vue';
 import UbiButton from '../components/Button.vue';
 import ChooseLanguage from '../components/ChooseLanguage.vue';
@@ -77,7 +78,14 @@ export default {
     return {
       email: '',
       password: '',
+      token: '',
     };
+  },
+  watch: {
+    token() {
+      sessionStorage.setItem('token', this.token);
+      this.$router.push('/home');
+    }
   },
   methods: {
     goTo() {
@@ -95,8 +103,28 @@ export default {
     goToForgotPassword() {
       this.$router.push('/forgotpassword');
     },
-    login() {
-      this.$router.push('/home');
+    async login() {
+      try {
+        const response = await axios({
+          method: 'post',
+          url: 'http://ubi-backend.test/api/login',
+          data: {
+            email: this.email,
+            password: this.password,
+          },
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+            'Access-Control-Allow-Credentials': true,
+          },
+        });
+        this.token = response.data.token;
+      } catch (error) {
+        this.error = error.response.data.message;
+        return this.error;
+      }
     },
   },
 };

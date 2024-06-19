@@ -6,12 +6,15 @@
     <div
       class="item-container stroke"
       :class="{'selected': getActivePage('/home')}"
+      @click="goTo('/home')"
     >
       <MapIcon/>
       <span class="labels">{{ $t('menu.location') }}</span>
     </div>
     <div
       class="item-container stroke"
+      :class="{'selected': getActivePage('/medicalrecords')}"
+      @click="goTo('/medicalrecords')"
     >
       <File/>
       <span class="labels">{{ $t('menu.medical_records') }}</span>
@@ -40,7 +43,7 @@
       <Help/>
       <span class="labels">{{ $t('menu.help') }}</span>
     </div>
-    <div class="item-container stroke" @click="goTo('/')">
+    <div class="item-container stroke" @click="logout()">
       <Logout/>
       <span class="labels">{{ $t('menu.exit') }}</span>
     </div>
@@ -59,6 +62,7 @@ import Settings from './Icons/Settings.vue';
 import Help from './Icons/Help.vue';
 import Logout from './Icons/Logout.vue';
 import Expand from './Icons/Expand.vue';
+import axios from 'axios';
 
 export default {
   name: 'HomePage',
@@ -83,6 +87,29 @@ export default {
         return true;
       }
       return false;
+    },
+    async logout() {
+      try {
+        const getToken = sessionStorage.getItem('token');
+        await axios({
+          method: 'post',
+          url: 'http://ubi-backend.test/api/logout',
+          data: {
+            token: getToken,
+          },
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+            'Access-Control-Allow-Credentials': true,
+          },
+        });
+        this.$router.push('/');
+      } catch (error) {
+        this.error = error.response.data.message;
+        return this.error;
+      }
     },
   },
 };

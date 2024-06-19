@@ -11,6 +11,7 @@ import Home from './pages/Home.vue';
 import BraceletRegistration from './pages/BraceletRegistration.vue'
 import Settings from './pages/Settings.vue';
 import HelpPage from './pages/HelpPage.vue';
+import MedicalRecords from './pages/MedicalRecords.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -24,6 +25,7 @@ const router = createRouter({
     { path: '/bracelet', name: 'BraceletRegistration', component: BraceletRegistration },
     { path: '/settings', name: 'Settings', component: Settings },
     { path: '/help', name: 'HelpPage', component: HelpPage },
+    { path: '/medicalrecords', name: 'MedicalRecords', component: MedicalRecords },
   ],
 });
 

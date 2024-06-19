@@ -1,6 +1,7 @@
 <template>
   <div
     :class="[secondary ? 'button-secondary' : 'button']"
+    :style="changeColor"
     @click="handleClick"
   >
     <slot name="icon"></slot>
@@ -29,6 +30,11 @@ export default {
       default: false,
     },
   },
+  computed: {
+    changeColor() {
+      return `background-color: ${this.color}`;
+    },
+  },
 };
 </script>
 
@@ -47,19 +53,16 @@ export default {
   background-color: #780000;
 }
 .button-secondary {
-  color: #780000;
+  color: #FFFF;
   height: 40px;
   width: 100%;
-  border-radius: 50px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: -3px 5px 15px -8px rgba(127, 143, 164, 0.3);
   cursor: pointer;
   font-size: 20px;
-  &:hover {
-    background-color: #780000;
-    color: #FFFF;
-  }
+  background-color: #780000;
 }
 </style>
