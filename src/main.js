@@ -10,6 +10,7 @@ import CheckPage from './pages/CheckPage.vue';
 import Home from './pages/Home.vue';
 import BraceletRegistration from './pages/BraceletRegistration.vue'
 import Settings from './pages/Settings.vue';
+import HelpPage from './pages/HelpPage.vue';
 import MedicalRecords from './pages/MedicalRecords.vue';
 
 const router = createRouter({
@@ -23,6 +24,7 @@ const router = createRouter({
     { path: '/home', name: 'Home', component: Home },
     { path: '/bracelet', name: 'BraceletRegistration', component: BraceletRegistration },
     { path: '/settings', name: 'Settings', component: Settings },
+    { path: '/help', name: 'HelpPage', component: HelpPage },
     { path: '/medicalrecords', name: 'MedicalRecords', component: MedicalRecords },
   ],
 });

@@ -35,7 +35,11 @@
       <Settings/>
       <span class="labels">{{ $t('menu.settings') }}</span>
     </div>
-    <div class="item-container fill">
+    <div
+      class="item-container fill"
+      :class="{'selected': getActivePage('/help')}"
+      @click="goTo('/help')"
+    >
       <Help/>
       <span class="labels">{{ $t('menu.help') }}</span>
     </div>
