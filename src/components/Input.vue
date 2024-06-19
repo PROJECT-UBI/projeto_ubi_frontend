@@ -2,12 +2,25 @@
   <div class="ubi-Input">
     <label class="ubi-Label">
       {{ label }}
+      <span v-if="obligatory" class="ubi-input-obligatory">*</span>
     </label>
     <div class="input-with-icon">
       <div class="input-icon">
         <slot name="icon"></slot>
       </div>
+      <textarea
+        v-if="type === 'textarea'"
+        class="ubi-input-put"
+        :class="{'error': error}"
+        :type="type"
+        :placeholder="placeholder"
+        :value="modelValue"
+        :disabled="disabled"
+        @input.stop="$emit('input', $event.target.value)"
+      >
+      </textarea>
       <input
+        v-else
         class="ubi-input-put"
         :class="{'error': error}"
         :type="type"
@@ -50,6 +63,10 @@ export default {
       type: String,
       default: '',
     },
+    obligatory: {
+      type: Boolean,
+      default: false,
+    },
     modelValue: [String, Number],
   },
   methods: {
@@ -60,7 +77,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .ubi-Input {
   display: flex;
   flex-direction: column;
@@ -105,5 +122,9 @@ input:focus {
 }
 .ubi-input-put {
   padding-left: 35px; /* Ajuste conforme necessário para acomodar o ícone */
+}
+.ubi-input-obligatory {
+  color: #780000;
+  margin-left: -5px;
 }
 </style>

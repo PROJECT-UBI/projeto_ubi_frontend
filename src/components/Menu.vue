@@ -6,12 +6,15 @@
     <div
       class="item-container stroke"
       :class="{'selected': getActivePage('/home')}"
+      @click="goTo('/home')"
     >
       <MapIcon/>
       <span class="labels">{{ $t('menu.location') }}</span>
     </div>
     <div
       class="item-container stroke"
+      :class="{'selected': getActivePage('/medicalrecords')}"
+      @click="goTo('/medicalrecords')"
     >
       <File/>
       <span class="labels">{{ $t('menu.medical_records') }}</span>

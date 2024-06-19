@@ -10,22 +10,22 @@
         {{ $t('reset.UBI') }}
       </div>
       <div class="ubi-input">
-        <UbiInput 
-          :label="$t('reset.label_password')" 
-          :placeholder="$t('reset.placeholder_password')" 
+        <UbiInput
+          :label="$t('reset.label_password')"
+          :placeholder="$t('reset.placeholder_password')"
           type="password"
-          v-model="password" 
+          v-model="password"
           @input="getPassword"
         >
           <template #icon>
             <Locker />
           </template>
         </UbiInput>
-        <UbiInput 
-          :label="$t('reset.label_confirm_password')" 
+        <UbiInput
+          :label="$t('reset.label_confirm_password')"
           :placeholder="$t('reset.placeholder_confirm_password')"
-          type="password" 
-          v-model="password_confirm" 
+          type="password"
+          v-model="password_confirm"
           @input="confirmPassword"
         >
           <template #icon>
@@ -33,9 +33,9 @@
           </template>
       </UbiInput>
       </div>
-      <UbiButton 
-        :label="$t('reset.reset')" 
-        :handleClick="goTo" 
+      <UbiButton
+        :label="$t('reset.reset')"
+        :handleClick="goTo"
         class="button-reset"
       >
       </UbiButton>
