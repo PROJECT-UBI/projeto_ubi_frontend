@@ -9,28 +9,29 @@
       <div class="ubi-message">{{ $t('bracelet.message') }}</div>
       <div class="ubi-inputs">
         <UbiInput 
-      :label="$t('bracelet.label_name')" 
-      :placeholder="$t('bracelet.placeholder_name')" 
-      v-model="name"
-      @input="getName">
-        <template #icon>
-          <User/>
-        </template>
-      </UbiInput>
-      <UbiInput 
-        :label="$t('bracelet.label_code')" 
-        :placeholder="$t('bracelet.placeholder_code')" 
-        v-model="bracelet"
-        @input="getBracelet">
+          :label="$t('bracelet.label_name')" 
+          :placeholder="$t('bracelet.placeholder_name')" 
+          v-model="name"
+          @input="getName"
+        >
           <template #icon>
-          <Bracelet/>
-        </template>
-      </UbiInput>
-      <UbiButton 
-        :label="$t('bracelet.bracelet')" 
-        :handleClick="goTo"
-        class="button-bracelet">
-      </UbiButton>
+            <User/>
+          </template>
+        </UbiInput>
+        <UbiInput 
+          :label="$t('bracelet.label_code')" 
+          :placeholder="$t('bracelet.placeholder_code')" 
+          v-model="bracelet"
+          @input="getBracelet">
+            <template #icon>
+            <Bracelet/>
+          </template>
+        </UbiInput>
+        <UbiButton 
+          :label="$t('bracelet.bracelet')" 
+          :handleClick="registerBand"
+          class="button-bracelet">
+        </UbiButton>
       </div>
     </div>
   </div>
@@ -43,6 +44,7 @@ import UbiInput from '../components/Input.vue';
 import UbiButton from '../components/Button.vue';
 import User from '../components/Icons/User.vue';
 import Bracelet from '../components/Icons/Bracelet.vue';
+import axios from 'axios';
 
 export default {
   name: 'RegisterBracelet',
@@ -69,8 +71,38 @@ export default {
     getBracelet(bracelet) {
       this.bracelet = bracelet;
     },
-    },
-  };
+    async registerBand() {
+      try {
+        const token = sessionStorage.getItem('token');
+        const response = await axios({
+          method: 'post',
+          url: 'http://ubi-backend.test/api/band',
+          data: {
+            IMEI: this.bracelet,
+            name: this.name,
+            latitude: -23.550520,
+            longitude: -46.633308,
+          },
+          headers: {
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+            'Access-Control-Allow-Credentials': true,
+          },
+        });
+        this.userData = response.data;
+        this.name = this.userData.name;
+        this.surname = this.userData.last_name;
+        this.email = this.userData.email;
+      } catch (error) {
+        this.error = error.response;
+        return this.error;
+      }
+    }
+  },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -72,6 +72,8 @@
           :label="$t('medical_record_register.label_blood_type')"
           :placeholder="$t('medical_record_register.placeholder_blood_type')"
           obligatory
+          v-model="blood_type"
+          @input="getBloodType"
         >
           <template #icon>
             <Drop/>
@@ -210,7 +212,7 @@
           <UbiButton
             secondary
             color="#669BBC"
-            :handleClick="() => nextPage()"
+            :handleClick="() => registerMedicalRecord()"
           >
             <template #icon>
               <Check/>
@@ -236,6 +238,7 @@ import Left from '../components/Icons/Left.vue';
 import Check from '../components/Icons/Check.vue';
 import Ruler from '../components/Icons/Ruler.vue';
 import Virus from '../components/Icons/Virus.vue';
+import axios from 'axios';
 
 export default {
   components: {
@@ -260,6 +263,7 @@ export default {
       cpf: null,
       height: null,
       weight: null,
+      blood_type: null,
       illnesses: null,
       plan: null,
       surgery: false,
@@ -293,6 +297,9 @@ export default {
     getWeight(weight) {
       this.weight = weight;
     },
+    getBloodType(blood_type) {
+      this.blood_type = blood_type;
+    },
     getIllnesses(illnesses) {
       this.illnesses = illnesses;
     },
@@ -317,6 +324,40 @@ export default {
     getDescriptionMedications(medications) {
       this.descriptionMedications = medications;
     },
+    async registerMedicalRecord() {
+      const token = sessionStorage.getItem('token');
+      const dateObject = new Date(this.dateBirth);
+      const isoDate = dateObject.toISOString().split('T')[0];
+      try {
+        const response = await axios({
+          method: 'post',
+          url: 'http://ubi-backend.test/api/medicalRecord',
+          data: {
+            name: this.name,
+            birth: isoDate,
+            height: parseInt(this.weight),
+            weight: parseInt(this.weight),
+            blood_type: this.blood_type,
+            allergies: this.descriptionAllergy,
+            medications: this.descriptionMedications,
+            diseases: this.illnesses,
+            surgeries: this.descriptionSurgery,
+          },
+          headers: {
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+            'Access-Control-Allow-Credentials': true,
+          },
+        });
+        return response;
+      } catch (error) {
+        this.error = error.response.data.message;
+        return this.error;
+      }
+    }
   },
 };
 </script>

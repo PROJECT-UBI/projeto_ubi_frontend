@@ -37,8 +37,10 @@
         <span class="ubi-title">{{ $t('settings.profile_title') }}</span>
         <div class="ubi-form">
           <UbiInput
-          :label="$t('register.label_name')"
-          :placeholder="$t('register.placeholder_name')"
+            :label="$t('register.label_name')"
+            :placeholder="$t('register.placeholder_name')"
+            v-model="name"
+            @input="getName"
         >
           <template #icon>
             <User/>
@@ -47,6 +49,8 @@
         <UbiInput
           :label="$t('register.label_surname')"
           :placeholder="$t('register.placeholder_surname')"
+          v-model="surname"
+          @input="getSurname"
         >
           <template #icon>
             <User/>
@@ -56,6 +60,8 @@
           :label="$t('register.label_email')"
           :placeholder="$t('register.placeholder_email')"
           type="email"
+          v-model="email"
+          @input="getEmail"
         >
           <template #icon>
             <Email/>
@@ -150,6 +156,7 @@ import UbiInput from '../components/Input.vue';
 import Email from '../components/Icons/Email.vue';
 import Globe from '../components/Icons/Globe.vue';
 import Flag from '../components/Flag.vue';
+import axios from 'axios';
 
 export default {
   name: 'SettingsaPage',
@@ -166,7 +173,15 @@ export default {
   data() {
     return {
       showSettings: '',
+      name: '',
+      surname: '',
+      email: '',
+      error: '',
+      userData: {},
     };
+  },
+  created() {
+    this.getUser();
   },
   methods: {
     goTo() {
@@ -181,6 +196,39 @@ export default {
     changeLanguage(lang) {
       this.$i18next.changeLanguage(lang);
     },
+    getName(name) {
+      this.name = name;
+    },
+    getSurname(surname) {
+      this.surname = surname;
+    },
+    getEmail(email) {
+      this.email = email;
+    },
+    async getUser() {
+      try {
+        const token = sessionStorage.getItem('token');
+        const response = await axios({
+          method: 'get',
+          url: 'http://ubi-backend.test/api/user',
+          headers: {
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+            'Access-Control-Allow-Credentials': true,
+          },
+        });
+        this.userData = response.data;
+        this.name = this.userData.name;
+        this.surname = this.userData.last_name;
+        this.email = this.userData.email;
+      } catch (error) {
+        this.error = error.response;
+        return this.error;
+      }
+    }
   },
 };
 </script>
