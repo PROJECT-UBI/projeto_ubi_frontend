@@ -90,11 +90,9 @@ export default {
         await axios({
           method: 'post',
           url: 'http://ubi-backend.test/api/logout',
-          data: {
-            token: getToken,
-          },
           headers: {
             Accept: 'application/json',
+            Authorization: `Bearer ${getToken}`,
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': '*',
@@ -102,6 +100,7 @@ export default {
           },
         });
         this.$router.push('/');
+        sessionStorage.removeItem('token');
       } catch (error) {
         this.error = error.response.data.message;
         return this.error;
