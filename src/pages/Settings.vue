@@ -206,7 +206,6 @@ export default {
       this.email = email;
     },
     async getUser() {
-      console.log('GET USER');
       try {
         const token = sessionStorage.getItem('token');
         const response = await axios({
