@@ -83,5 +83,23 @@
     "display_language": "Select display language",
     "portuguese": "Portuguese",
     "english": "English"
-  }
+  },
+  "caretakers": {
+    "UBI": "Caretakers Registration",
+    "firstContact": "First Contact Option",
+    "secondContact": "Second Contact Option",
+    "syncBracelet": "Sync Bracelet",
+    "label_name": "Full Name",
+    "label_phone": "Phone",
+    "label_email": "Email",
+    "label_second_name": "Full Name",
+    "label_second_phone": "Phone",
+    "label_sync_bracelet": "Select Bracelet Code",
+    "placeholder_name": "Enter full name",
+    "placeholder_phone": "(Area Code) X XXXX-XXXX",
+    "placeholder_email": "contact@contact.com",
+    "placeholder_second_name": "Enter full name",
+    "placeholder_second_phone": "(Area Code) X XXXX-XXXX",
+    "placeholder_sync_bracelet": "Select code"
+}
 }

@@ -84,6 +84,24 @@
     "portuguese": "Português",
     "english": "Inglês"
   },
+  "caretakers": {
+    "UBI": "Cadastro de Responsáveis",
+    "firstContact": "Primeira opção de contato",
+    "secondContact": "Segunda opção de contato",
+    "syncBracelet": "Vincular Pulseira",
+    "label_name": "Nome completo",
+    "label_phone": "Telefone",
+    "label_email": "E-mail",
+    "label_second_name": "Nome completo",
+    "label_second_phone": "Telefone",
+    "label_sync_bracelet": "Selecione o código da pulseira",
+    "placeholder_name": "Insira o nome completo",
+    "placeholder_phone": "(DDD) X XXXX-XXXX",
+    "placeholder_email": "contato@contato.com",
+    "placeholder_second_name": "Insira o nome completo",
+    "placeholder_second_phone": "(DDD) X XXXX-XXXX",
+    "placeholder_sync_bracelet": "Selecione o código"
+  },
   "helpPage": {
     "title":"Fale Conosco",
     "helpMessage":"A UBI está aqui para ouvir você! Caso tenha alguma pergunta, comentário ou preocupação, estamos prontos para ajudar e ansiosos para ouvir o que você tem a dizer!",
