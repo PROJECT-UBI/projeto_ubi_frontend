@@ -83,5 +83,23 @@
     "display_language": "Selecione o idioma de exibição",
     "portuguese": "Português",
     "english": "Inglês"
+  },
+  "caretakers": {
+    "UBI": "Cadastro de Responsáveis",
+    "firstContact": "Primeira opção de contato",
+    "secondContact": "Segunda opção de contato",
+    "syncBracelet": "Vincular Pulseira",
+    "label_name": "Nome completo",
+    "label_phone": "Telefone",
+    "label_email": "E-mail",
+    "label_second_name": "Nome completo",
+    "label_second_phone": "Telefone",
+    "label_sync_bracelet": "Selecione o código da pulseira",
+    "placeholder_name": "Insira o nome completo",
+    "placeholder_phone": "(DDD) X XXXX-XXXX",
+    "placeholder_email": "contato@contato.com",
+    "placeholder_second_name": "Insira o nome completo",
+    "placeholder_second_phone": "(DDD) X XXXX-XXXX",
+    "placeholder_sync_bracelet": "Selecione o código"
   }
 }
